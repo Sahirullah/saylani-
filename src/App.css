@@ -1,0 +1,373 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  color: #333;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Complete CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  color: #333;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Layout Components */
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+}
+
+/* Global Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+/* Section Reset - Remove all conflicting styles */
+section {
+  width: 100%;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+/* Clear any floats */
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Ensure proper section flow */
+.main-content {
+  padding-top: 0;
+}
+
+.main-content section {
+  width: 100%;
+  display: block;
+  position: relative;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  gap: 8px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #4a7c59, #6ba16f);
+  color: white;
+  box-shadow: 0 5px 20px rgba(74, 124, 89, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(74, 124, 89, 0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #2c5530;
+  border: 2px solid #2c5530;
+}
+
+.btn-outline:hover {
+  background: #2c5530;
+  color: white;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* Responsive Images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  gap: 8px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #4a7c59, #6ba16f);
+  color: white;
+  box-shadow: 0 5px 20px rgba(74, 124, 89, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(74, 124, 89, 0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #2c5530;
+  border: 2px solid #2c5530;
+}
+
+.btn-outline:hover {
+  background: #2c5530;
+  color: white;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* Responsive Images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Global Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  gap: 8px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #4a7c59, #6ba16f);
+  color: white;
+  box-shadow: 0 5px 20px rgba(74, 124, 89, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(74, 124, 89, 0.4);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #2c5530, #4a7c59);
+  color: white;
+  box-shadow: 0 5px 20px rgba(44, 85, 48, 0.3);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(44, 85, 48, 0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #2c5530;
+  border: 2px solid #2c5530;
+}
+
+.btn-outline:hover {
+  background: #2c5530;
+  color: white;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* Responsive Images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Smooth Scrolling for Anchor Links */
+a[href^="#"] {
+  scroll-behavior: smooth;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background: #1a1a2e;
+  color: #ffffff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .container {
+  color: #ffffff;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: #ffffff;
+}
+
+body.dark-mode p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+body.dark-mode .btn-outline {
+  color: #6ba16f;
+  border-color: #6ba16f;
+}
+
+body.dark-mode .btn-outline:hover {
+  background: #6ba16f;
+  color: #1a1a2e;
+}
+
+/* Dark mode for sections */
+body.dark-mode section {
+  background: #1a1a2e;
+  color: #ffffff;
+}
+
+/* Dark mode for cards and containers */
+body.dark-mode .card,
+body.dark-mode .testimonial-card,
+body.dark-mode .program-card,
+body.dark-mode .news-card,
+body.dark-mode .gallery-item {
+  background: #16213e;
+  border-color: rgba(107, 161, 111, 0.2);
+  color: #ffffff;
+}
+
+body.dark-mode .modal-content {
+  background: #16213e;
+  color: #ffffff;
+}
+
+/* Dark mode for forms */
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+  background: #16213e;
+  border-color: rgba(107, 161, 111, 0.3);
+  color: #ffffff;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Dark mode for navigation */
+body.dark-mode .nav-links a {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+body.dark-mode .nav-links a:hover,
+body.dark-mode .nav-links a.active {
+  color: #6ba16f;
+}

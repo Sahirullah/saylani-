@@ -1,0 +1,55 @@
+.scroll-to-top {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #4a7c59, #6ba16f);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 20px rgba(74, 124, 89, 0.3);
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  z-index: 999;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(74, 124, 89, 0.4);
+}
+
+.scroll-icon {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Dark mode */
+body.dark-mode .scroll-to-top {
+  background: linear-gradient(135deg, #6ba16f, #4a7c59);
+}
+
+@media (max-width: 768px) {
+  .scroll-to-top {
+    bottom: 140px;
+    right: 15px;
+    width: 45px;
+    height: 45px;
+  }
+  
+  .scroll-icon {
+    font-size: 1.3rem;
+  }
+}

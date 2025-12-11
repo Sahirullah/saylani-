@@ -1,0 +1,472 @@
+.about {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #f8fffe 0%, #e8f5e8 100%);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Introduction Section */
+.about-intro {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.section-title {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 800;
+  color: #2c5530;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(135deg, #4a7c59, #6ba16f);
+  border-radius: 2px;
+}
+
+.intro-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Mission, Vision & Values Section */
+.mvv-section {
+  margin-bottom: 100px;
+}
+
+.mvv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.mvv-card {
+  background: white;
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+  border-top: 5px solid transparent;
+}
+
+.mvv-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.mvv-card.mission {
+  border-top-color: #4a7c59;
+}
+
+.mvv-card.vision {
+  border-top-color: #6ba16f;
+}
+
+.mvv-card.values {
+  border-top-color: #2c5530;
+}
+
+.mvv-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.mvv-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2c5530;
+  margin-bottom: 1rem;
+}
+
+.mvv-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+.mvv-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mvv-card li {
+  padding: 0.5rem 0;
+  color: #666;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.mvv-card li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #4a7c59;
+  font-weight: bold;
+}
+
+/* Founder's Message */
+.founder-message {
+  background: white;
+  border-radius: 25px;
+  padding: 4rem;
+  margin-bottom: 100px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.founder-content {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.founder-image {
+  text-align: center;
+}
+
+.founder-image img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #4a7c59;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.founder-text h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c5530;
+  margin-bottom: 1.5rem;
+}
+
+.founder-text blockquote {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #555;
+  font-style: italic;
+  margin: 0 0 2rem 0;
+  padding-left: 2rem;
+  border-left: 4px solid #4a7c59;
+  position: relative;
+}
+
+.founder-text blockquote::before {
+  content: '"';
+  font-size: 4rem;
+  color: #4a7c59;
+  position: absolute;
+  left: -1rem;
+  top: -1rem;
+  font-family: serif;
+}
+
+.founder-signature strong {
+  display: block;
+  font-size: 1.2rem;
+  color: #2c5530;
+  margin-bottom: 0.5rem;
+}
+
+.founder-signature span {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* Timeline Section */
+.timeline-section {
+  margin-bottom: 50px;
+}
+
+.timeline-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c5530;
+  margin-bottom: 3rem;
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, #4a7c59, #6ba16f);
+  border-radius: 2px;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.timeline-item:nth-child(odd) {
+  flex-direction: row;
+}
+
+.timeline-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.timeline-year {
+  background: linear-gradient(135deg, #4a7c59, #6ba16f);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  min-width: 80px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.timeline-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  margin: 0 2rem;
+  flex: 1;
+  max-width: 300px;
+  transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-content h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2c5530;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about {
+    padding: 60px 0;
+  }
+
+  .mvv-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .mvv-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .founder-message {
+    padding: 2rem;
+  }
+
+  .founder-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .founder-image img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .timeline::before {
+    left: 30px;
+  }
+
+  .timeline-item {
+    flex-direction: row !important;
+    padding-left: 60px;
+  }
+
+  .timeline-item:nth-child(even) {
+    flex-direction: row !important;
+  }
+
+  .timeline-year {
+    position: absolute;
+    left: 0;
+    min-width: 60px;
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .timeline-content {
+    margin: 0;
+    max-width: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .founder-message {
+    padding: 1.5rem;
+  }
+
+  .timeline-content {
+    padding: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .timeline-title {
+    font-size: 2rem;
+  }
+}
+
+/* Dark Mode Styles for About */
+body.dark-mode .about {
+  background: #1a1a2e;
+}
+
+body.dark-mode .about-intro {
+  background: #16213e;
+}
+
+body.dark-mode .section-title {
+  color: #ffffff;
+}
+
+body.dark-mode .intro-text {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+body.dark-mode .mvv-card {
+  background: #16213e;
+  border-color: rgba(107, 161, 111, 0.2);
+}
+
+body.dark-mode .mvv-card h3 {
+  color: #6ba16f;
+}
+
+body.dark-mode .mvv-card p,
+body.dark-mode .mvv-card li {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+body.dark-mode .founder-section {
+  background: #16213e;
+}
+
+body.dark-mode .founder-content h3 {
+  color: #ffffff;
+}
+
+body.dark-mode .founder-quote {
+  color: rgba(255, 255, 255, 0.9);
+  border-left-color: #6ba16f;
+}
+
+body.dark-mode .founder-name {
+  color: #6ba16f;
+}
+
+body.dark-mode .founder-title {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+body.dark-mode .timeline-item {
+  background: #16213e;
+  border-color: rgba(107, 161, 111, 0.2);
+}
+
+body.dark-mode .timeline-year {
+  background: #6ba16f;
+  color: #ffffff;
+}
+
+body.dark-mode .timeline-content h4 {
+  color: #ffffff;
+}
+
+body.dark-mode .timeline-content p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+body.dark-mode .impact-card {
+  background: #16213e;
+  border-color: rgba(107, 161, 111, 0.2);
+}
+
+body.dark-mode .impact-number {
+  color: #6ba16f;
+}
+
+body.dark-mode .impact-label {
+  color: rgba(255, 255, 255, 0.8);
+}
+/* Da
+rk Mode Styles for Timeline */
+body.dark-mode .timeline-content {
+  background: #16213e;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+body.dark-mode .timeline-content h4 {
+  color: #ffffff;
+}
+
+body.dark-mode .timeline-content p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+body.dark-mode .founder-message {
+  background: #16213e;
+}
+
+body.dark-mode .founder-text h3 {
+  color: #ffffff;
+}
+
+body.dark-mode .founder-text blockquote {
+  color: rgba(255, 255, 255, 0.9);
+  border-left-color: #6ba16f;
+}
+
+body.dark-mode .founder-signature strong {
+  color: #6ba16f;
+}
+
+body.dark-mode .founder-signature span {
+  color: rgba(255, 255, 255, 0.7);
+}
