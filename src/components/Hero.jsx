@@ -12,9 +12,7 @@ const Hero = () => {
       <div className="hero-container">
         <div className="hero-content">
           <div className="hero-left">
-            <div className="hero-badge">
-              <span className="badge-text">Introducing Saylani</span>
-            </div>
+
             
             <h1 className="hero-title">
               Empowering Communities
