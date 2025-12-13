@@ -1,32 +1,42 @@
 import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
-import Hero from './components/Hero'
-import About from './components/About'
-import Programs from './components/Programs'
-import SuccessStories from './components/SuccessStories'
-import Gallery from './components/Gallery'
-import NewsEvents from './components/NewsEvents'
-import Contact from './components/Contact'
-import Donate from './components/Donate'
 import Footer from './components/Footer'
+import WhatsAppButton from './components/WhatsAppButton'
+import ScrollToTop from './components/ScrollToTop'
+
+// Import Pages
+import Home from './pages/Home'
+import AboutPage from './pages/AboutPage'
+import ProgramsPage from './pages/ProgramsPage'
+import GalleryPage from './pages/GalleryPage'
+import NewsPage from './pages/NewsPage'
+import ContactPage from './pages/ContactPage'
+import DonatePage from './pages/DonatePage'
+
 import './App.css'
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <main className="main-content">
-        <Hero />
-        <About />
-        <Programs />
-        <SuccessStories />
-        <Gallery />
-        <NewsEvents />
-        <Contact />
-        <Donate />
-      </main>
-      <Footer />
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/programs" element={<ProgramsPage />} />
+            <Route path="/gallery" element={<GalleryPage />} />
+            <Route path="/news" element={<NewsPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/donate" element={<DonatePage />} />
+          </Routes>
+        </main>
+        <Footer />
+        <WhatsAppButton />
+        <ScrollToTop />
+      </div>
+    </Router>
   )
 }
 

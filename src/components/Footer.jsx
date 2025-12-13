@@ -89,22 +89,22 @@ const Footer = () => {
                 <h5 className="social-title">Follow Us</h5>
                 <div className="social-links">
                   <a href="https://facebook.com/saylaniwelfare" target="_blank" rel="noopener noreferrer" className="social-link facebook">
-                    <span className="social-icon">📘</span>
+                    <i className="fab fa-facebook-f social-icon"></i>
                   </a>
                   <a href="https://twitter.com/saylaniwelfare" target="_blank" rel="noopener noreferrer" className="social-link twitter">
-                    <span className="social-icon">🐦</span>
+                    <i className="fab fa-twitter social-icon"></i>
                   </a>
                   <a href="https://instagram.com/saylaniwelfare" target="_blank" rel="noopener noreferrer" className="social-link instagram">
-                    <span className="social-icon">📷</span>
+                    <i className="fab fa-instagram social-icon"></i>
                   </a>
                   <a href="https://linkedin.com/company/saylaniwelfare" target="_blank" rel="noopener noreferrer" className="social-link linkedin">
-                    <span className="social-icon">💼</span>
+                    <i className="fab fa-linkedin-in social-icon"></i>
                   </a>
                   <a href="https://youtube.com/saylaniwelfare" target="_blank" rel="noopener noreferrer" className="social-link youtube">
-                    <span className="social-icon">📺</span>
+                    <i className="fab fa-youtube social-icon"></i>
                   </a>
-                  <a href="https://wa.me/923001234567" target="_blank" rel="noopener noreferrer" className="social-link whatsapp">
-                    <span className="social-icon">💬</span>
+                  <a href="https://tiktok.com/@saylaniwelfare" target="_blank" rel="noopener noreferrer" className="social-link tiktok">
+                    <i className="fab fa-tiktok social-icon"></i>
                   </a>
                 </div>
               </div>
@@ -134,16 +134,7 @@ const Footer = () => {
               <a href="/refund-policy">Refund Policy</a>
             </div>
             
-            <div className="footer-badges">
-              <div className="badge">
-                <span className="badge-icon">🔒</span>
-                <span className="badge-text">Secure Donations</span>
-              </div>
-              <div className="badge">
-                <span className="badge-icon">✅</span>
-                <span className="badge-text">Verified NGO</span>
-              </div>
-            </div>
+
           </div>
         </div>
       </div>

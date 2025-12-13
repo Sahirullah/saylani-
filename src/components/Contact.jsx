@@ -178,29 +178,23 @@ const Contact = () => {
               <h4>Follow Us</h4>
               <p>Stay connected with us on social media for the latest updates.</p>
               <div className="social-links">
-                <a href="https://facebook.com/saylaniwelfare" target="_blank" rel="noopener noreferrer" className="social-link facebook">
-                  <span className="social-icon">📘</span>
-                  <span>Facebook</span>
+                <a href="https://facebook.com/saylaniwelfare" target="_blank" rel="noopener noreferrer" className="social-link facebook" title="Facebook">
+                  <i className="fab fa-facebook-f"></i>
                 </a>
-                <a href="https://twitter.com/saylaniwelfare" target="_blank" rel="noopener noreferrer" className="social-link twitter">
-                  <span className="social-icon">🐦</span>
-                  <span>Twitter</span>
+                <a href="https://twitter.com/saylaniwelfare" target="_blank" rel="noopener noreferrer" className="social-link twitter" title="Twitter">
+                  <i className="fab fa-twitter"></i>
                 </a>
-                <a href="https://instagram.com/saylaniwelfare" target="_blank" rel="noopener noreferrer" className="social-link instagram">
-                  <span className="social-icon">📷</span>
-                  <span>Instagram</span>
+                <a href="https://instagram.com/saylaniwelfare" target="_blank" rel="noopener noreferrer" className="social-link instagram" title="Instagram">
+                  <i className="fab fa-instagram"></i>
                 </a>
-                <a href="https://linkedin.com/company/saylaniwelfare" target="_blank" rel="noopener noreferrer" className="social-link linkedin">
-                  <span className="social-icon">💼</span>
-                  <span>LinkedIn</span>
+                <a href="https://linkedin.com/company/saylaniwelfare" target="_blank" rel="noopener noreferrer" className="social-link linkedin" title="LinkedIn">
+                  <i className="fab fa-linkedin-in"></i>
                 </a>
-                <a href="https://youtube.com/saylaniwelfare" target="_blank" rel="noopener noreferrer" className="social-link youtube">
-                  <span className="social-icon">📺</span>
-                  <span>YouTube</span>
+                <a href="https://youtube.com/saylaniwelfare" target="_blank" rel="noopener noreferrer" className="social-link youtube" title="YouTube">
+                  <i className="fab fa-youtube"></i>
                 </a>
-                <a href="https://wa.me/923001234567" target="_blank" rel="noopener noreferrer" className="social-link whatsapp">
-                  <span className="social-icon">💬</span>
-                  <span>WhatsApp</span>
+                <a href="https://tiktok.com/@saylaniwelfare" target="_blank" rel="noopener noreferrer" className="social-link tiktok" title="TikTok">
+                  <i className="fab fa-tiktok"></i>
                 </a>
               </div>
             </div>
