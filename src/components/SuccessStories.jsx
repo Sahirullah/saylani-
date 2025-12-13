@@ -5,7 +5,7 @@ import './SuccessStories.css';
 import successStory1 from '../assets/Successes story 1.png';
 import successStory2 from '../assets/sucesses story2.jpg';
 import ceoImage from '../assets/CEO.jfif';
-import studentImage from '../assets/USA student.webp';
+import studentImage from '../assets/gallerypic3.jpg';
 import gallerypic2 from '../assets/gallerypic2.jpg';
 import gallerypic3 from '../assets/gallerypic3.jpg';
 import gallerypic4 from '../assets/gallerypic4.webp';

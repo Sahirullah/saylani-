@@ -32,7 +32,7 @@
 .section-title {
   font-size: clamp(2.5rem, 4vw, 3.5rem);
   font-weight: 800;
-  color: #2c5530;
+  color: #1e40af;
   margin-bottom: 1.5rem;
   position: relative;
 }
@@ -45,7 +45,7 @@
   transform: translateX(-50%);
   width: 120px;
   height: 4px;
-  background: linear-gradient(135deg, #4a7c59, #6ba16f);
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
   border-radius: 2px;
 }
 
@@ -147,7 +147,7 @@
 .card-icon {
   width: 50px;
   height: 50px;
-  background: linear-gradient(135deg, #4a7c59, #6ba16f);
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -164,7 +164,7 @@
 .card-title {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #2c5530;
+  color: #1e40af;
   margin: 0;
   line-height: 1.3;
 }
@@ -172,7 +172,7 @@
 .title-underline {
   width: 30px;
   height: 3px;
-  background: linear-gradient(135deg, #4a7c59, #6ba16f);
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
   border-radius: 2px;
   margin-top: 0.5rem;
 }
@@ -192,18 +192,21 @@
 .card-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  padding: 1.2rem;
+  gap: 0.8rem;
+  padding: 1.2rem 1rem;
   background: linear-gradient(135deg, #f8fffe 0%, #e8f5e8 50%, #f0f9f0 100%);
   border-radius: 16px;
   margin-bottom: 1.5rem;
-  border: 1px solid rgba(74, 124, 89, 0.1);
-  box-shadow: 0 2px 8px rgba(74, 124, 89, 0.05);
+  border: 1px solid rgba(37, 99, 235, 0.1);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.05);
 }
 
 .stat-item {
   text-align: center;
   transition: transform 0.3s ease;
+  padding: 0.3rem;
+  border-radius: 8px;
+  min-width: 0;
 }
 
 .program-card:hover .stat-item {
@@ -214,13 +217,13 @@
   display: block;
   font-size: 1.3rem;
   font-weight: 900;
-  color: #4a7c59;
+  color: #2563eb;
   margin-bottom: 0.25rem;
-  background: linear-gradient(135deg, #4a7c59, #6ba16f);
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-shadow: 0 2px 4px rgba(74, 124, 89, 0.1);
+  text-shadow: 0 2px 4px rgba(37, 99, 235, 0.1);
   letter-spacing: 0.5px;
 }
 
@@ -228,9 +231,13 @@
   font-size: 0.75rem;
   color: #555;
   font-weight: 600;
-  text-transform: capitalize;
-  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
   line-height: 1.2;
+  margin-top: 0.3rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card-action {
@@ -743,24 +750,25 @@ body.dark-mode .programs-cta {
 }/* Action Button Styles */
 .action-btn {
   width: 100%;
-  padding: 16px 24px;
-  background: linear-gradient(135deg, #4a7c59 0%, #6ba16f 50%, #7bb17f 100%);
+  padding: 18px 28px;
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #60a5fa 100%);
   border: none;
-  border-radius: 12px;
+  border-radius: 14px;
   color: white;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 12px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 6px 20px rgba(74, 124, 89, 0.25);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .action-btn::before {
@@ -796,9 +804,10 @@ body.dark-mode .programs-cta {
 }
 
 .action-btn:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 12px 35px rgba(74, 124, 89, 0.5);
-  background: linear-gradient(135deg, #5a8c69 0%, #7bb17f 50%, #8bc34a 100%);
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(37, 99, 235, 0.6);
+  background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #3b82f6 100%);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 .action-btn .btn-text {

@@ -2,8 +2,9 @@ import React from 'react';
 import './Hero.css';
 import heroImage1 from '../assets/herosection1.png';
 import heroImage2 from '../assets/herosection2.webp';
-import heroImage3 from '../assets/hero section image.jpg';
-import studentImage from '../assets/USA student.webp';
+import heroImage3 from '../assets/gallerypic2.jpg';
+import heroImage4 from '../assets/gallerypic3.jpg';
+import heroImage5 from '../assets/gallerypic5.jpg';
 
 const Hero = () => {
   return (
@@ -55,25 +56,15 @@ const Hero = () => {
               </div>
               
               <div className="floating-circle circle-3">
-                <img src={studentImage} alt="Students Learning with Technology" />
+                <img src={heroImage3} alt="Students Learning with Technology" />
               </div>
               
               <div className="floating-circle circle-4">
-                <div className="circle-content">
-                  <div className="profile-icon">🤝</div>
-                  <div className="profile-dots">
-                    <span className="dot blue"></span>
-                    <span className="dot orange"></span>
-                    <span className="dot red"></span>
-                    <span className="dot green"></span>
-                  </div>
-                </div>
+                <img src={heroImage4} alt="Women Empowerment Program" />
               </div>
               
               <div className="floating-circle circle-5">
-                <div className="award-content">
-                  <div className="award-icon">🏆</div>
-                </div>
+                <img src={heroImage5} alt="Student Graduation Ceremony" />
               </div>
             </div>
           </div>

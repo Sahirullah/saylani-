@@ -4,7 +4,7 @@
   right: 30px;
   width: 60px;
   height: 60px;
-  background: linear-gradient(135deg, #4a7c59 0%, #6ba16f 50%, #7bb17f 100%);
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #60a5fa 100%);
   color: white;
   border: none;
   border-radius: 50%;
@@ -12,7 +12,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 10px 30px rgba(74, 124, 89, 0.5);
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.5);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   opacity: 1;
   visibility: visible;
@@ -26,8 +26,8 @@
 
 .scroll-to-top:hover {
   transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 12px 35px rgba(74, 124, 89, 0.6);
-  background: linear-gradient(135deg, #6ba16f 0%, #4a7c59 50%, #2c5530 100%);
+  box-shadow: 0 12px 35px rgba(37, 99, 235, 0.6);
+  background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #1e40af 100%);
 }
 
 .scroll-icon {
@@ -59,7 +59,7 @@
 
 /* Dark mode */
 body.dark-mode .scroll-to-top {
-  background: linear-gradient(135deg, #6ba16f, #4a7c59);
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
 }
 
 @media (max-width: 768px) {

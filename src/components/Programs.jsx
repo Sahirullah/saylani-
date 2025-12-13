@@ -7,7 +7,7 @@ import gallerypic3 from '../assets/gallerypic3.jpg';
 import gallerypic4 from '../assets/gallerypic4.webp';
 import gallerypic5 from '../assets/gallerypic5.jpg';
 import pic1 from '../assets/pic1.webp';
-import studentImage from '../assets/USA student.webp';
+import studentImage from '../assets/gallerypic2.jpg';
 
 const Programs = () => {
   const [activeCard, setActiveCard] = useState(null);

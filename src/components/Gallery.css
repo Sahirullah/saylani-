@@ -31,7 +31,7 @@
   transform: translateX(-50%);
   width: 120px;
   height: 4px;
-  background: linear-gradient(135deg, #4a7c59, #6ba16f);
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
   border-radius: 2px;
 }
 
@@ -68,17 +68,17 @@
 }
 
 .filter-btn:hover {
-  border-color: #4a7c59;
-  color: #4a7c59;
+  border-color: #2563eb;
+  color: #2563eb;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .filter-btn.active {
-  background: linear-gradient(135deg, #4a7c59, #6ba16f);
-  border-color: #4a7c59;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  border-color: #2563eb;
   color: white;
-  box-shadow: 0 5px 20px rgba(74, 124, 89, 0.3);
+  box-shadow: 0 5px 20px rgba(37, 99, 235, 0.3);
 }
 
 .filter-icon {

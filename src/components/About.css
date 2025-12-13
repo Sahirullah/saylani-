@@ -31,7 +31,7 @@
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background: linear-gradient(135deg, #4a7c59, #6ba16f);
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
   border-radius: 2px;
 }
 
@@ -71,11 +71,11 @@
 }
 
 .mvv-card.mission {
-  border-top-color: #4a7c59;
+  border-top-color: #2563eb;
 }
 
 .mvv-card.vision {
-  border-top-color: #6ba16f;
+  border-top-color: #3b82f6;
 }
 
 .mvv-card.values {
@@ -147,7 +147,7 @@
   height: 180px;
   border-radius: 50%;
   object-fit: cover;
-  border: 5px solid #4a7c59;
+  border: 5px solid #2563eb;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
@@ -165,7 +165,7 @@
   font-style: italic;
   margin: 0 0 2rem 0;
   padding-left: 2rem;
-  border-left: 4px solid #4a7c59;
+  border-left: 4px solid #2563eb;
   position: relative;
 }
 
@@ -217,7 +217,7 @@
   transform: translateX(-50%);
   width: 4px;
   height: 100%;
-  background: linear-gradient(to bottom, #4a7c59, #6ba16f);
+  background: linear-gradient(to bottom, #2563eb, #3b82f6);
   border-radius: 2px;
 }
 
@@ -237,7 +237,7 @@
 }
 
 .timeline-year {
-  background: linear-gradient(135deg, #4a7c59, #6ba16f);
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
   color: white;
   padding: 1rem 1.5rem;
   border-radius: 25px;
