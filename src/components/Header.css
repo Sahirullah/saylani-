@@ -264,7 +264,16 @@ body.dark-mode .btn-outline:hover {
   }
 
   .header-actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .header-actions .btn {
     display: none;
+  }
+  
+  .theme-toggle {
+    display: flex;
   }
 
   .menu-toggle {
