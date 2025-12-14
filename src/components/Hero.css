@@ -398,6 +398,11 @@
     justify-content: center;
   }
   
+  .btn {
+    min-width: 220px;
+    max-width: 300px;
+  }
+  
   .hero-stats {
     align-items: center;
   }
@@ -456,12 +461,13 @@
   }
   
   .hero-actions {
-    flex-direction: column;
-    width: 100%;
+    justify-content: center;
   }
   
   .btn {
-    width: 100%;
+    width: auto;
+    min-width: 200px;
+    max-width: 280px;
     justify-content: center;
   }
   
@@ -513,6 +519,13 @@
   .hero-description {
     font-size: 0.8rem;
     line-height: 1.5;
+  }
+  
+  .btn {
+    min-width: 180px;
+    max-width: 250px;
+    padding: 12px 24px;
+    font-size: 0.9rem;
   }
   
   .hero-visual {
