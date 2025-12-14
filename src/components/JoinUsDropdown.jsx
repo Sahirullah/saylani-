@@ -26,29 +26,81 @@ const JoinUsDropdown = ({ isOpen, onClose, buttonRef }) => {
     setIsSubmitting(true);
     
     try {
-      // Send email using Formspree (free service - no setup required)
-      const response = await fetch('https://formspree.io/f/mldejqko', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.fullName,
-          email: formData.email,
-          phone: formData.phone,
-          city: formData.city,
-          motivation: formData.motivation || 'Not provided',
-          _replyto: formData.email,
-          _subject: 'New Join Us Application - Saylani Welfare',
-          _template: 'table'
-        })
-      });
+      // Create a comprehensive email solution
+      const emailContent = {
+        to: 'sahirullah313@gmail.com',
+        subject: 'New Join Us Application - Saylani Welfare',
+        body: `
+New Join Us Application Received:
 
-      if (response.ok) {
-        console.log('Email sent successfully to sahirullah313@gmail.com!');
-      } else {
-        console.log('Email service unavailable, but form data saved');
+Full Name: ${formData.fullName}
+Email: ${formData.email}
+Phone: ${formData.phone}
+City: ${formData.city}
+Motivation: ${formData.motivation || 'Not provided'}
+Submitted at: ${new Date().toLocaleString()}
+
+Please contact this person regarding their interest in joining Saylani Welfare.
+        `
+      };
+
+      // Method 1: Try Netlify Forms (works if deployed on Netlify)
+      try {
+        const netlifyResponse = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams({
+            'form-name': 'join-us',
+            'name': formData.fullName,
+            'email': formData.email,
+            'phone': formData.phone,
+            'city': formData.city,
+            'motivation': formData.motivation || 'Not provided'
+          })
+        });
+        
+        if (netlifyResponse.ok) {
+          console.log('Form submitted via Netlify Forms');
+        }
+      } catch (netlifyError) {
+        console.log('Netlify Forms not available');
       }
+
+      // Method 2: Use Formsubmit.co (free email service)
+      try {
+        const formSubmitResponse = await fetch('https://formsubmit.co/sahirullah313@gmail.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: formData.fullName,
+            email: formData.email,
+            phone: formData.phone,
+            city: formData.city,
+            motivation: formData.motivation || 'Not provided',
+            _subject: 'New Join Us Application - Saylani Welfare',
+            _captcha: 'false',
+            _template: 'table'
+          })
+        });
+        
+        if (formSubmitResponse.ok) {
+          console.log('Email sent successfully via FormSubmit!');
+        }
+      } catch (formSubmitError) {
+        console.log('FormSubmit service error:', formSubmitError);
+      }
+
+      // Method 3: Store in localStorage for manual processing
+      const submissions = JSON.parse(localStorage.getItem('joinUsSubmissions') || '[]');
+      submissions.push({
+        ...formData,
+        submittedAt: new Date().toISOString(),
+        id: Date.now()
+      });
+      localStorage.setItem('joinUsSubmissions', JSON.stringify(submissions));
+      
+      console.log('Form data saved locally:', formData);
+      console.log('All submissions:', submissions);
       
       console.log('Join Us Form Data:', formData);
       
