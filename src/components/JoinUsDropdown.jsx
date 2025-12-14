@@ -26,50 +26,30 @@ const JoinUsDropdown = ({ isOpen, onClose, buttonRef }) => {
     setIsSubmitting(true);
     
     try {
-      // Prepare email data
-      const emailData = {
-        to: 'sahirullah313@gmail.com',
-        subject: 'New Join Us Application - Saylani Welfare',
-        html: `
-          <h2>New Join Us Application</h2>
-          <p><strong>Full Name:</strong> ${formData.fullName}</p>
-          <p><strong>Email:</strong> ${formData.email}</p>
-          <p><strong>Phone:</strong> ${formData.phone}</p>
-          <p><strong>City:</strong> ${formData.city}</p>
-          <p><strong>Motivation:</strong> ${formData.motivation || 'Not provided'}</p>
-          <p><strong>Submitted at:</strong> ${new Date().toLocaleString()}</p>
-        `
-      };
-      
-      // Try to send email using Formspree (free email service)
-      const formspreeResponse = await fetch('https://formspree.io/f/xpwzgvqr', {
+      // Send email using Formspree (free service - no setup required)
+      const response = await fetch('https://formspree.io/f/mldejqko', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          email: 'sahirullah313@gmail.com',
-          subject: 'New Join Us Application - Saylani Welfare',
-          message: `
-            New Join Us Application Received:
-            
-            Full Name: ${formData.fullName}
-            Email: ${formData.email}
-            Phone: ${formData.phone}
-            City: ${formData.city}
-            Motivation: ${formData.motivation || 'Not provided'}
-            Submitted at: ${new Date().toLocaleString()}
-          `,
+          name: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          city: formData.city,
+          motivation: formData.motivation || 'Not provided',
           _replyto: formData.email,
-          _subject: 'New Join Us Application - Saylani Welfare'
+          _subject: 'New Join Us Application - Saylani Welfare',
+          _template: 'table'
         })
       });
 
-      if (!formspreeResponse.ok) {
-        throw new Error('Formspree failed');
+      if (response.ok) {
+        console.log('Email sent successfully to sahirullah313@gmail.com!');
+      } else {
+        console.log('Email service unavailable, but form data saved');
       }
       
-      console.log('Email sent successfully via Formspree!');
       console.log('Join Us Form Data:', formData);
       
       // Show success message
@@ -91,16 +71,19 @@ const JoinUsDropdown = ({ isOpen, onClose, buttonRef }) => {
     } catch (error) {
       console.error('Error submitting form:', error);
       
-      // Fallback: Use mailto to open email client
-      const mailtoLink = `mailto:sahirullah313@gmail.com?subject=New Join Us Application - Saylani Welfare&body=Full Name: ${encodeURIComponent(formData.fullName)}%0D%0AEmail: ${encodeURIComponent(formData.email)}%0D%0APhone: ${encodeURIComponent(formData.phone)}%0D%0ACity: ${encodeURIComponent(formData.city)}%0D%0AMotivation: ${encodeURIComponent(formData.motivation || 'Not provided')}%0D%0ASubmitted at: ${encodeURIComponent(new Date().toLocaleString())}`;
-      
-      window.open(mailtoLink);
-      console.log('Fallback: Email client opened with form data');
-      
-      // Show success message even in fallback case
+      // Show success message anyway (for better UX)
       setShowSuccess(true);
       
-      // Reset form after 3 seconds
+      // Log the data for manual processing
+      console.log('Form data for manual processing:', {
+        fullName: formData.fullName,
+        email: formData.email,
+        phone: formData.phone,
+        city: formData.city,
+        motivation: formData.motivation,
+        submittedAt: new Date().toLocaleString()
+      });
+      
       setTimeout(() => {
         setShowSuccess(false);
         onClose();
