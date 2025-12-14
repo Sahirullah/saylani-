@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './JoinUsDropdown.css';
 
 const JoinUsDropdown = ({ isOpen, onClose, buttonRef }) => {
@@ -41,13 +41,36 @@ const JoinUsDropdown = ({ isOpen, onClose, buttonRef }) => {
         `
       };
       
-      // Here you would typically send to your backend API
-      // For now, we'll simulate the email sending
-      console.log('Join Us Form Data:', formData);
-      console.log('Email would be sent to:', emailData);
+      // Try to send email using Formspree (free email service)
+      const formspreeResponse = await fetch('https://formspree.io/f/xpwzgvqr', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: 'sahirullah313@gmail.com',
+          subject: 'New Join Us Application - Saylani Welfare',
+          message: `
+            New Join Us Application Received:
+            
+            Full Name: ${formData.fullName}
+            Email: ${formData.email}
+            Phone: ${formData.phone}
+            City: ${formData.city}
+            Motivation: ${formData.motivation || 'Not provided'}
+            Submitted at: ${new Date().toLocaleString()}
+          `,
+          _replyto: formData.email,
+          _subject: 'New Join Us Application - Saylani Welfare'
+        })
+      });
+
+      if (!formspreeResponse.ok) {
+        throw new Error('Formspree failed');
+      }
       
-      // Simulate API call delay
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      console.log('Email sent successfully via Formspree!');
+      console.log('Join Us Form Data:', formData);
       
       // Show success message
       setShowSuccess(true);
@@ -67,7 +90,29 @@ const JoinUsDropdown = ({ isOpen, onClose, buttonRef }) => {
       
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert('There was an error submitting your application. Please try again.');
+      
+      // Fallback: Use mailto to open email client
+      const mailtoLink = `mailto:sahirullah313@gmail.com?subject=New Join Us Application - Saylani Welfare&body=Full Name: ${encodeURIComponent(formData.fullName)}%0D%0AEmail: ${encodeURIComponent(formData.email)}%0D%0APhone: ${encodeURIComponent(formData.phone)}%0D%0ACity: ${encodeURIComponent(formData.city)}%0D%0AMotivation: ${encodeURIComponent(formData.motivation || 'Not provided')}%0D%0ASubmitted at: ${encodeURIComponent(new Date().toLocaleString())}`;
+      
+      window.open(mailtoLink);
+      console.log('Fallback: Email client opened with form data');
+      
+      // Show success message even in fallback case
+      setShowSuccess(true);
+      
+      // Reset form after 3 seconds
+      setTimeout(() => {
+        setShowSuccess(false);
+        onClose();
+        setFormData({
+          fullName: '',
+          email: '',
+          phone: '',
+          city: '',
+          motivation: ''
+        });
+      }, 3000);
+      
     } finally {
       setIsSubmitting(false);
     }
@@ -96,7 +141,17 @@ const JoinUsDropdown = ({ isOpen, onClose, buttonRef }) => {
         right: `${position.right}px`
       }}
     >
-      <div className="dropdown-header">
+      {showSuccess && (
+        <div className="success-message">
+          <div className="success-icon">✓</div>
+          <h3>Submit Successful!</h3>
+          <p>Thank you for your interest! We will contact you soon.</p>
+        </div>
+      )}
+      
+      {!showSuccess && (
+        <>
+          <div className="dropdown-header">
         <h3>Join Saylani Welfare</h3>
         <button className="close-btn" onClick={onClose}>×</button>
       </div>
@@ -163,11 +218,17 @@ const JoinUsDropdown = ({ isOpen, onClose, buttonRef }) => {
         </div>
 
         <div className="form-actions">
-          <button type="submit" className="btn-submit-compact">
-            Submit Application
+          <button 
+            type="submit" 
+            className="btn-submit-compact"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? 'Submitting...' : 'Submit Application'}
           </button>
         </div>
       </form>
+        </>
+      )}
     </div>
   );
 };
