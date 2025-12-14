@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './ScrollToTop.css';
 
 const ScrollToTop = () => {
-  const [isVisible, setIsVisible] = useState(true); // Temporarily set to true for testing
+  const [isVisible, setIsVisible] = useState(true); // Temporarily always visible
 
   useEffect(() => {
     const toggleVisibility = () => {
@@ -22,31 +22,10 @@ const ScrollToTop = () => {
   }, []);
 
   const scrollToTop = () => {
-    console.log('ScrollToTop button clicked!'); // Debug log
-    
-    // Try multiple methods to ensure compatibility
-    try {
-      // Method 1: Modern smooth scroll
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-      });
-    } catch (error) {
-      console.log('Method 1 failed, trying fallback');
-      // Method 2: Fallback for older browsers
-      document.documentElement.scrollTop = 0;
-      document.body.scrollTop = 0;
-    }
-    
-    // Method 3: Additional fallback using scrollIntoView
-    const topElement = document.getElementById('home') || document.body;
-    if (topElement && topElement.scrollIntoView) {
-      topElement.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
 
   return (

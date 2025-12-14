@@ -1,9 +1,9 @@
 .scroll-to-top {
   position: fixed;
-  bottom: 110px;
+  bottom: 100px;
   right: 30px;
-  width: 60px;
-  height: 60px;
+  width: 45px;
+  height: 45px;
   background: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #60a5fa 100%);
   color: white;
   border: none;
@@ -18,7 +18,7 @@
   opacity: 0;
   visibility: hidden;
   transform: translateY(100px);
-  z-index: 9999;
+  z-index: 99999;
   backdrop-filter: blur(10px);
   border: 2px solid rgba(255, 255, 255, 0.2);
 }
@@ -32,7 +32,7 @@
 }
 
 .scroll-icon {
-  font-size: 2rem;
+  font-size: 1.4rem;
   font-weight: bold;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
   line-height: 1;
@@ -65,39 +65,39 @@ body.dark-mode .scroll-to-top {
 
 @media (max-width: 768px) {
   .scroll-to-top {
-    bottom: 95px;
+    bottom: 85px;
     right: 20px;
-    width: 55px;
-    height: 55px;
+    width: 40px;
+    height: 40px;
   }
   
   .scroll-icon {
-    font-size: 1.7rem;
+    font-size: 1.2rem;
   }
 }
 
 @media (max-width: 480px) {
   .scroll-to-top {
-    bottom: 85px;
+    bottom: 75px;
     right: 15px;
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
   }
   
   .scroll-icon {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 360px) {
   .scroll-to-top {
-    bottom: 75px;
+    bottom: 65px;
     right: 10px;
-    width: 45px;
-    height: 45px;
+    width: 32px;
+    height: 32px;
   }
   
   .scroll-icon {
-    font-size: 1.3rem;
+    font-size: 0.9rem;
   }
 }

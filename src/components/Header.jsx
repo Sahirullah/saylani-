@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Header.css';
 import logo from '../assets/Logo.png';
+import JoinUsDropdown from './JoinUsDropdown';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isJoinDropdownOpen, setIsJoinDropdownOpen] = useState(false);
+  const joinButtonRef = useRef(null);
   const location = useLocation();
 
   const toggleMenu = () => {
@@ -15,6 +18,14 @@ const Header = () => {
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
     document.body.classList.toggle('dark-mode');
+  };
+
+  const toggleJoinDropdown = () => {
+    setIsJoinDropdownOpen(!isJoinDropdownOpen);
+  };
+
+  const closeJoinDropdown = () => {
+    setIsJoinDropdownOpen(false);
   };
 
   useEffect(() => {
@@ -30,6 +41,20 @@ const Header = () => {
     // Save theme preference
     localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
   }, [isDarkMode]);
+
+  useEffect(() => {
+    // Close dropdown when clicking outside
+    const handleClickOutside = (event) => {
+      if (isJoinDropdownOpen && !event.target.closest('.join-us-container')) {
+        setIsJoinDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isJoinDropdownOpen]);
 
   return (
     <header className="header">
@@ -55,7 +80,20 @@ const Header = () => {
           <button className="theme-toggle" onClick={toggleDarkMode}>
             <span className="theme-icon">{isDarkMode ? '☀️' : '🌙'}</span>
           </button>
-          <button className="btn btn-outline">Join Us</button>
+          <div className="join-us-container">
+            <button 
+              ref={joinButtonRef}
+              className="btn btn-outline" 
+              onClick={toggleJoinDropdown}
+            >
+              Join Us
+            </button>
+            <JoinUsDropdown 
+              isOpen={isJoinDropdownOpen} 
+              onClose={closeJoinDropdown}
+              buttonRef={joinButtonRef}
+            />
+          </div>
           <Link to="/donate" className="btn btn-primary donate-btn">
             <span className="btn-text">Donate Now</span>
             <span className="btn-icon">❤️</span>
@@ -68,6 +106,8 @@ const Header = () => {
           <span></span>
         </button>
       </div>
+      
+
     </header>
   );
 };

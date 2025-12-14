@@ -89,6 +89,12 @@
   position: relative;
 }
 
+.join-us-container {
+  position: relative;
+  display: inline-block;
+  z-index: 1001;
+}
+
 .header-actions .btn {
   padding: 12px 24px;
   border-radius: 25px;
