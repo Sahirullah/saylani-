@@ -30,7 +30,7 @@
 }
 
 .section-title {
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
   font-weight: 800;
   color: #1e40af;
   margin-bottom: 1.5rem;
@@ -50,7 +50,7 @@
 }
 
 .section-subtitle {
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 1.7;
   color: #666;
   max-width: 800px;
@@ -152,7 +152,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: white;
   flex-shrink: 0;
 }
@@ -162,7 +162,7 @@
 }
 
 .card-title {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 700;
   color: #1e40af;
   margin: 0;
@@ -178,10 +178,10 @@
 }
 
 .card-description {
-  font-size: 0.9rem;
-  line-height: 1.6;
+  font-size: 0.8rem;
+  line-height: 1.5;
   color: #666;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
   flex: 1;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -215,8 +215,8 @@
 
 .stat-number {
   display: block;
-  font-size: 1.3rem;
-  font-weight: 900;
+  font-size: 0.4rem !important;
+  font-weight: 700;
   color: #2563eb;
   margin-bottom: 0.25rem;
   background: linear-gradient(135deg, #2563eb, #3b82f6);
@@ -224,17 +224,17 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-shadow: 0 2px 4px rgba(37, 99, 235, 0.1);
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
 }
 
 .stat-label {
-  font-size: 0.75rem;
+  font-size: 0.55rem;
   color: #555;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.2px;
   line-height: 1.2;
-  margin-top: 0.3rem;
+  margin-top: 0.2rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -339,10 +339,10 @@
 }
 
 .category-icon {
-  font-size: 3rem;
+  font-size: 2rem;
   background: rgba(255, 255, 255, 0.2);
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -352,7 +352,7 @@
 }
 
 .category-icon-large {
-  font-size: 5rem;
+  font-size: 3rem;
   color: white;
   text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   animation: float 3s ease-in-out infinite;
@@ -392,7 +392,7 @@
 }
 
 .category-title {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 700;
   color: #2c5530;
   margin-bottom: 0.5rem;
@@ -428,14 +428,14 @@
 
 .stat-number {
   display: block;
-  font-size: 1rem;
+  font-size: 0.4rem !important;
   font-weight: 800;
   color: #4a7c59;
   margin-bottom: 0.2rem;
 }
 
 .stat-label {
-  font-size: 0.7rem;
+  font-size: 0.55rem;
   color: #666;
   font-weight: 500;
   text-transform: uppercase;
@@ -564,7 +564,7 @@
 }
 
 .cta-content h3 {
-  font-size: 2.2rem;
+  font-size: 1.6rem;
   font-weight: 800;
   margin-bottom: 1rem;
   color: white;
@@ -750,12 +750,12 @@ body.dark-mode .programs-cta {
 }/* Action Button Styles */
 .action-btn {
   width: 100%;
-  padding: 18px 28px;
+  padding: 14px 24px;
   background: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #60a5fa 100%);
   border: none;
   border-radius: 14px;
   color: white;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -767,8 +767,9 @@ body.dark-mode .programs-cta {
   overflow: hidden;
   box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
   text-transform: uppercase;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.5px;
   border: 2px solid rgba(255, 255, 255, 0.2);
+  white-space: nowrap;
 }
 
 .action-btn::before {
@@ -816,7 +817,7 @@ body.dark-mode .programs-cta {
 }
 
 .action-btn .btn-arrow {
-  font-size: 18px;
+  font-size: 12px;
   transition: transform 0.4s ease;
   font-weight: bold;
 }
@@ -840,4 +841,20 @@ body.dark-mode .action-btn {
 body.dark-mode .action-btn:hover {
   background: linear-gradient(135deg, #7bb17f, #5a8c69);
   box-shadow: 0 8px 25px rgba(107, 161, 111, 0.5);
+}/*
+ Force smaller font sizes for program card stats */
+.program-card .stat-number {
+  font-size: 0.9rem !important;
+}
+
+.program-card .stat-label {
+  font-size: 0.7rem !important;
+}
+
+.card-stats .stat-number {
+  font-size: 0.9rem !important;
+}
+
+.card-stats .stat-label {
+  font-size: 0.7rem !important;
 }
